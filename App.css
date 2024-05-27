@@ -1,174 +1,239 @@
 /* General styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  h2 {
-    color: #343a40;
-    text-align: center;
-    margin-top: 0;
-  }
-  
-  /* Contact List Styles */
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h2 {
+  color: #343a40;
+  text-align: center;
+  margin-top: 0;
+}
+
+/* Contact List Styles */
+.contact-list {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.table-container {
+  max-height: 400px; /* Adjust this height as needed */
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+thead {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f1f3f5;
+}
+
+tbody tr:hover {
+  background-color: #e2e6ea;
+}
+
+button {
+  padding: 5px 10px;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.update-button {
+  background-color: #007bff;
+}
+
+.update-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  margin-left: 5px;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Create Button Styles */
+button {
+  margin: 20px auto;
+  display: block;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ff0000;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 10px;
+  color: #495057;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"] {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .contact-list {
-    width: 100%;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 20px;
-    overflow: hidden;
-  }
-  
-  .table-container {
-    max-height: 400px; /* Adjust this height as needed */
-    overflow-y: auto;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-  }
-  
-  thead {
-    background-color: #007bff;
-    color: #ffffff;
-  }
-  
-  th, td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #e9ecef;
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #f1f3f5;
-  }
-  
-  tbody tr:hover {
-    background-color: #e2e6ea;
-  }
-  
-  button {
-    padding: 5px 10px;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .update-button {
-    background-color: #007bff;
-  }
-  
-  .update-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .delete-button {
-    background-color: #dc3545;
-    margin-left: 5px;
-  }
-  
-  .delete-button:hover {
-    background-color: #c82333;
-  }
-  
-  /* Create Button Styles */
-  button {
-    margin: 20px auto;
-    display: block;
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .create-button:hover {
-    background-color: #218838;
-  }
-  
-  /* Modal Styles */
-  .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .modal-content {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #000000;
-    cursor: pointer;
-  }
-  
-  .close:hover {
-    color: #ff0000;
-  }
-  
-  /* Form Styles */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  form label {
-    margin-bottom: 10px;
-    color: #495057;
-  }
-  
-  form input[type="text"] {
     padding: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    font-size: 16px;
   }
-  
-  form button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+
+  th, td {
+    padding: 10px;
   }
-  
-  form button[type="submit"]:hover {
-    background-color: #0056b3;
+
+  button {
+    font-size: 12px;
+    padding: 8px;
   }
-  
+
+  .modal-content {
+    width: 95%;
+  }
+}
+
+/* Accessibility Improvements */
+button:focus,
+.close:focus,
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus {
+  outline: 3px solid #0056b3;
+  outline-offset: 2px;
+}
+
+/* Scroll Button Styles */
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-button:hover {
+  background-color: #0056b3;
+}
