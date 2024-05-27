@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 const ContactList = ({ contacts, updateContact, updateCallback }) => {
+  const tableContainerRef = useRef(null);
+
   const onDelete = async (id) => {
     try {
       const options = {
@@ -17,10 +19,19 @@ const ContactList = ({ contacts, updateContact, updateCallback }) => {
     }
   };
 
+  const scrollDown = () => {
+    if (tableContainerRef.current) {
+      tableContainerRef.current.scrollBy({
+        top: 100, // Adjust the scroll amount as needed
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <div className="contact-list">
       <h2>Contacts</h2>
-      <div className="table-container">
+      <div className="table-container" ref={tableContainerRef}>
         <table>
           <thead>
             <tr>
@@ -49,6 +60,7 @@ const ContactList = ({ contacts, updateContact, updateCallback }) => {
           </tbody>
         </table>
       </div>
+      <button className="scroll-button" onClick={scrollDown}>↓</button>
     </div>
   );
 };
